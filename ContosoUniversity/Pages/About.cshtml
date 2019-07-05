@@ -1,0 +1,35 @@
+﻿@page
+@model ContosoUniversity.Pages.AboutModel
+
+@{
+    ViewData["Title"] = "Student Body Statistics";
+}
+<h2>Our contact information</h2>
+<br />
+<p>Name: Hidnel Milandou</p>
+<p>Phone: 111.222.3235</p>
+<p>Our address is: 555 Jessnel St 17, ID, Rexburg 88884.</p>
+<h2>Student Body Statistics</h2>
+
+<table>
+    <tr>
+        <th>
+            Enrollment Date
+        </th>
+        <th>
+            Students
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Student)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                @item.StudentCount
+            </td>
+        </tr>
+    }
+</table>
